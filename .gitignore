@@ -1,0 +1,39 @@
+# Ignorar ambiente virtual Python
+venv/
+.venv/
+
+# Ignorar dados brutos (arquivos pesados)
+data/
+
+# Ignorar o banco de dados local DuckDB
+database/
+*.duckdb
+*.duckdb.wal
+
+# Ignorar caches do Python e Jupyter
+__pycache__/
+.ipynb_checkpoints/
+
+# Ignorar exports HTML dos notebooks (recriáveis via nbconvert)
+notebooks/*.html
+
+# Ignorar arquivos do sistema operacional (macOS)
+__MACOSX/
+.DS_Store
+
+# Ignorar anotações e rascunhos pessoais do analista
+personal_notes/
+
+# Ignorar pasta de backups locais
+backup/
+
+# Ignorar arquivos e pastas temporárias
+temporario/
+
+# Ignorar pastas de configuração de IA e agentes locais
+.agents/
+.gemini/
+
+# Ignorar configurações locais do VS Code e Workspaces
+.vscode/
+*.code-workspace
