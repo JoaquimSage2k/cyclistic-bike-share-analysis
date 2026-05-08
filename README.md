@@ -89,8 +89,6 @@ O notebook de limpeza gera o arquivo `cyclistic_project.duckdb` dentro da pasta 
  ┣ 📁 notebooks/
  ┃  ┣ 📓 DataClean.ipynb          #Limpeza dos dados
  ┃  ┣ 📓 DataAnalysis.ipynb       #Análise dos dados
- ┃  ┣ 📄 DataClean.html           #Export estático (recriável)
- ┃  ┗ 📄 DataAnalysis.html        #Export estático (recriável)
  ┣ 📁 assets/                     #Gráficos utilizados neste README
  ┣ 📁 data/                       #Pasta para os arquivos .CSV
  ┣ 📁 scripts/
