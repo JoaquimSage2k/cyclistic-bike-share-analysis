@@ -91,7 +91,7 @@ O notebook de limpeza gera o arquivo `cyclistic_project.duckdb` dentro da pasta 
 ## Estrutura do Repositório
 
 ```
-📦 cyclistic-bike-share-analysis
+📦 cyclistic_bike-share_analysis
  ┣ 📁 notebooks/
  ┃  ┣ 📓 DataClean.ipynb          #Limpeza dos dados
  ┃  ┣ 📓 DataAnalysis.ipynb       #Análise dos dados

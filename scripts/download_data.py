@@ -1,6 +1,6 @@
 """
 download_data.py
-----------------
+--------------
 Baixa e descompacta os 12 arquivos .csv do período utilizado na análise
 (abril de 2025 a março de 2026) diretamente do repositório público da Divvy.
 
