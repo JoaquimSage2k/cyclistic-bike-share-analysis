@@ -167,6 +167,10 @@ Por outro lado, os membros partem mais de "dentro" da cidade, o que chamamos de 
 | **Lakefront** | DuSable Lake Shore Dr & Monroe St, Navy Pier, Michigan Ave & Oak St, Streeter Dr & Grand Ave, DuSable Lake Shore Dr & North Blvd | - |
 | **Downtown** | - | Kingsbury St & Kinzie St, Clinton St & Washington Blvd, Canal St & Madison St, Clinton St & Madison St, State St & Chicago Ave |
 
+### O que não diferencia os grupos
+
+A preferência por tipo de bicicleta foi testada como possível variável diferenciadora. A distribuição é essencialmente idêntica entre os grupos, com cerca de **65% de bicicletas elétricas e 34% de bicicletas clássicas** em ambos os casos.  
+**Tipo de bicicleta não é um fator de diferenciação comportamental entre casuais e membros.**
 ---
 
 ## Conclusão
