@@ -1,5 +1,5 @@
-# 🚴 Análise Cyclistic Bike-Share
-### Como uma empresa de bike-share converte usuários casuais em membros anuais?
+# 🚴 Cyclistic Bike-Share · Análise de Conversão Comportamental
+### Entendendo o comportamento de uso para converter usuários casuais em membros anuais
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=python&logoColor=white)
@@ -9,29 +9,33 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat&logo=jupyter&logoColor=white)
 
 
-> Projeto capstone do **Google Data Analytics Professional Certificate**.
-> Desenvolvido sobre dados reais de bike-share de Chicago (5,6 milhões de registros),
-> seguindo o ciclo completo de análise: **Perguntar → Preparar → Processar → Analisar → Compartilhar → Agir**.
-> Período: **abr. 2025 – mar. 2026** · 12 arquivos mensais.
+> Análise comportamental sobre dados reais da **Divvy**, serviço de bike-share de Chicago.
+> O objetivo é entender como os dois grupos utilizam o serviço de forma diferente
+> e derivar estratégias de conversão fundamentadas em padrão de uso.
+> Período: **abr. 2025 – mar. 2026**.
 
 ---
 
-## Tarefa de Negócio
+## Contexto de Negócio
 
-A equipe financeira da Cyclistic concluiu que **membros anuais são significativamente mais lucrativos** do que usuários casuais.
-Em vez de focar na aquisição de novos clientes, a diretora de marketing acredita que a maior oportunidade está em converter casuais — que já conhecem e usam o serviço — em membros.
+Em um serviço de assinatura, receita recorrente tende a ser mais lucrativa (e previsível, portanto estável)
+do que uso avulso. A maior oportunidade de crescimento da Cyclistic, 
+portanto, não está na aquisição de novos clientes — e sim na conversão dos usuários casuais, 
+que já conhecem e utilizam o serviço.
 
-A pergunta que me foi atribuída:
+A pergunta central desta análise:
 
-> **Como membros anuais e usuários casuais utilizam as bicicletas da Cyclistic de forma diferente?**
+> **Como membros anuais e usuários casuais utilizam o serviço de bike-share de 
+forma diferente?**
 
-A resposta a essa pergunta forma a base analítica de uma estratégia de conversão direcionada.
+A resposta a essa pergunta forma a base analítica de uma estratégia de conversão 
+direcionada.
 
 ---
 
 ## Como obter os dados
 
-Os arquivos CSV brutos (1.1 GB) não estão incluídos neste repositório por excederem os limites do GitHub. Você tem duas opções para baixar os 12 meses de dados necessários para rodar a análise.
+Os arquivos CSV não estão incluídos neste repositório por excederem os limites do GitHub. Você tem duas opções para baixar os dados necessários para rodar a análise.
 
 ### Opção 1: Download Automático via Script
 Para facilitar o setup, disponibilizamos um script Python que baixa todos os arquivos sequencialmente, descompacta os `.csv` e exclui os `.zip` residuais automaticamente.
@@ -42,15 +46,15 @@ python scripts/download_data.py
 ```
 O script exibirá uma barra de progresso no terminal e colocará todos os `.csv` diretamente na pasta `data/`.
 
-> [!Atenção]
 > **Possíveis problemas com o script automático:**
-> Os dados não estão sob nosso controle, sendo hospedados nos servidores da Divvy. Caso a URL pública mude no futuro, o site fique offline, ou o seu próprio firewall bloqueie downloads automatizados no terminal, o script irá acusar erro. Se isso acontecer, basta pular para a **Opção 2**.
+> Os dados não estão sob nosso controle, sendo hospedados nos servidores da Divvy. Caso a URL pública mude no futuro, o site fique offline, ou o seu próprio firewall bloqueie downloads automatizados no terminal, o script irá acusar erro.  
+Se isso acontecer, basta pular para a **Opção 2**.
 
 ### Opção 2: Download Manual
 Caso o script falhe ou você prefira baixar você mesmo:
 
-**1.** Acesse a fonte pública de dados em: [divvybikes.com/system-data](https://divvybikes.com/system-data)
-**2.** Baixe manualmente os 12 arquivos correspondentes aos meses de **abril de 2025** até **março de 2026**.
+**1.** Acesse a fonte pública de dados em: [divvybikes.com/system-data](https://divvybikes.com/system-data).  
+**2.** Baixe manualmente os 12 arquivos correspondentes aos meses de **abril de 2025** até **março de 2026**.  
 **3.** Descompacte e mova apenas os arquivos `.csv` extraídos para dentro da pasta `data/`:
 ```text
 data/
@@ -62,9 +66,9 @@ data/
 **4.** Crie e ative um ambiente virtual (recomendado):
 ```bash
 python -m venv .venv
-# Windows
+#Windows
 .venv\Scripts\activate
-# Mac/Linux
+#Mac/Linux
 source .venv/bin/activate
 ```
 
@@ -77,7 +81,9 @@ pip install -r requirements.txt
 ```bash
 jupyter notebook
 ```
-Primeiro `notebooks/DataClean.ipynb`, depois `notebooks/DataAnalysis.ipynb`.
+1. Rode o `notebooks/DataClean.ipynb`.  
+2. Em seguida, rode o `notebooks/DataAnalysis.ipynb`.  
+
 O notebook de limpeza gera o arquivo `cyclistic_project.duckdb` dentro da pasta `database/`, que é usado como banco de dados pelo notebook de análise.
 
 ---
@@ -101,7 +107,7 @@ O notebook de limpeza gera o arquivo `cyclistic_project.duckdb` dentro da pasta 
 
 ## A Análise
 
-O dataset foi explorado em quatro dimensões: **quando** cada grupo utiliza o serviço, **como** utiliza, **em que contexto** (sazonalidade) e **onde** (localização). Cada dimensão acrescenta uma camada à compreensão da diferença fundamental entre os dois grupos.
+Para entender o que diferencia os dois grupos, a análise foi estruturada em quatro dimensões comportamentais: **quando** cada grupo utiliza o serviço, **como** utiliza, **em que contexto** (sazonalidade) e **onde** (localização). Cada dimensão acrescenta uma camada à compreensão da diferença fundamental entre os dois grupos.
 
 ---
 
@@ -184,8 +190,6 @@ As quatro dimensões convergem para uma mesma direção:
 ## Recomendações
 
 Com base na análise, três estratégias de conversão foram propostas ao time de marketing:
-
-> As recomendações abaixo são orientadas por padrões de uso e devem ser validadas com dados financeiros internos, como margem por plano, custo de aquisição, taxa de conversão e valor vitalício do cliente.  
 	
 
 **1 — Campanhas de conversão orientadas pelo comportamento natural do usuário casual**
@@ -198,7 +202,9 @@ A Cyclistic deve criar modalidades de plano com duração flexível cobrindo Pri
 
 **3 — Conversão digital no momento de maior engajamento**
 *Baseada em:* Casuais concentram 47,51% das viagens no verão e 59,91% da média diária nos fins de semana. O casual de verão, no fim de semana, no Lakefront, é o casual mais engajado com o serviço. A barreira à conversão não é falta de experiência com o produto — é a ausência de um gatilho no momento certo.
-A Cyclistic deve explorar o canal do aplicativo para apresentar a proposta de valor da assinatura com base no histórico real de uso de cada usuário. Durante ou após uma corrida nesse período, o app pode mostrar quanto o usuário já gastou em passes avulsos na temporada e quanto teria pago com um plano. O argumento é pessoal, imediato e baseado no próprio comportamento do casual.
+A Cyclistic deve explorar o canal do aplicativo para apresentar a proposta de valor da assinatura com base no histórico real de uso de cada usuário. Durante ou após uma corrida nesse período, o app pode mostrar quanto o usuário já gastou em passes avulsos na temporada e quanto teria pago com um plano. O argumento é pessoal, imediato e baseado no próprio comportamento do casual.  
+
+> As recomendações acima são orientadas por padrões de uso e devem ser validadas com dados financeiros internos, como margem por plano, custo de aquisição, taxa de conversão e valor vitalício do cliente.  
 
 ---
 
@@ -216,5 +222,8 @@ A Cyclistic deve explorar o canal do aplicativo para apresentar a proposta de va
 
 <p align="center">
 	<sub>Fonte dos dados: <a href="https://divvybikes.com/system-data">Divvy trip data</a> 
-	abr. 2025 – mar. 2026 · Motivate International Inc. sob licença pública.</sub>
+	abr. 2025 – mar. 2026 · Motivate International Inc. sob licença pública.</sub> 
+	<br> 
+    <sub>Projeto desenvolvido como parte do 
+    <a href="https://grow.google/certificates/data-analytics/">Google Data Analytics Professional Certificate</a>.</sub>
 </p>

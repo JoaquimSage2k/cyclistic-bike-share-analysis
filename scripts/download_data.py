@@ -15,7 +15,6 @@ import zipfile
 import os
 import sys
 
-# ── Configuração ──────────────────────────────────────────────────────────────
 
 BASE_URL   = "https://divvy-tripdata.s3.amazonaws.com"
 MESES      = [
@@ -24,7 +23,6 @@ MESES      = [
 ]
 DATA_DIR   = os.path.join(os.path.dirname(__file__), "..", "data")
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
 
 def barra_progresso(baixados, total, largura=40):
     """Exibe uma barra de progresso simples no terminal."""
@@ -42,7 +40,7 @@ def baixar_arquivo(url, destino):
             barra_progresso(contagem * tamanho_bloco, tamanho_total)
 
     urllib.request.urlretrieve(url, destino, reporthook=progresso)
-    print()  # quebra de linha após a barra
+    print() 
 
 
 def descompactar(zip_path, pasta_destino):
@@ -53,7 +51,6 @@ def descompactar(zip_path, pasta_destino):
             zf.extract(csv, pasta_destino)
     return len(csvs)
 
-# ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
     os.makedirs(DATA_DIR, exist_ok=True)
@@ -88,7 +85,6 @@ def main():
             if os.path.exists(zip_path):
                 os.remove(zip_path)
 
-    # ── Resumo ────────────────────────────────────────────────────────────────
     print("-" * 50)
     print(f"Concluído: {ok}/{total} arquivos baixados com sucesso.")
 
