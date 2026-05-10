@@ -9,10 +9,10 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat&logo=jupyter&logoColor=white)
 
 
-> Análise comportamental sobre dados reais da **Divvy**, serviço de bike-share de Chicago.
-> O objetivo é entender como os dois grupos utilizam o serviço de forma diferente
-> e derivar estratégias de conversão fundamentadas em padrão de uso.
-> Período: **abr. 2025 – mar. 2026**.
+Análise comportamental sobre dados reais da **Divvy**, serviço de bike-share de Chicago.
+O objetivo é entender como os dois grupos utilizam o serviço de forma diferente
+e derivar estratégias de conversão fundamentadas em padrão de uso.
+Período: **abr. 2025 – mar. 2026**.
 
 ---
 
@@ -23,10 +23,8 @@ do que uso avulso. A maior oportunidade de crescimento da Cyclistic,
 portanto, não está na aquisição de novos clientes — e sim na conversão dos usuários casuais, 
 que já conhecem e utilizam o serviço.
 
-A pergunta central desta análise:
-
-> **Como membros anuais e usuários casuais utilizam o serviço de bike-share de 
-forma diferente?**
+A pergunta central desta análise:  
+**Como membros anuais e usuários casuais utilizam o serviço de bike-share de forma diferente?**
 
 A resposta a essa pergunta forma a base analítica de uma estratégia de conversão 
 direcionada.
@@ -170,7 +168,8 @@ Por outro lado, os membros partem mais de "dentro" da cidade, o que chamamos de 
 ### O que não diferencia os grupos
 
 A preferência por tipo de bicicleta foi testada como possível variável diferenciadora. A distribuição é essencialmente idêntica entre os grupos, com cerca de **65% de bicicletas elétricas e 34% de bicicletas clássicas** em ambos os casos.  
-**Tipo de bicicleta não é um fator de diferenciação comportamental entre casuais e membros.**
+Tipo de bicicleta não é um fator de diferenciação comportamental entre casuais e membros.
+
 ---
 
 ## Conclusão
@@ -184,9 +183,9 @@ As quatro dimensões convergem para uma mesma direção:
 | **Contexto** | Queda moderada no inverno | Queda acentuada no inverno |
 | **Onde** | Downtown · área de maior densidade urbana e comercial da cidade | Lakefront · parques, praias e atrações turísticas |
 
-> **A diferença fundamental entre os grupos parece estar no contexto e no propósito da viagem.**  
-> Membros apresentam padrões compatíveis com deslocamentos rotineiros.  
-> Casuais apresentam padrões mais compatíveis com uso recreativo e de lazer.  
+**A diferença fundamental entre os grupos parece estar no contexto e no propósito da viagem.**  
+Membros apresentam padrões compatíveis com deslocamentos rotineiros.  
+Casuais apresentam padrões mais compatíveis com uso recreativo e de lazer.  
 
 
 ---
